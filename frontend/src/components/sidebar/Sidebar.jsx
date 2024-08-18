@@ -10,8 +10,9 @@ import {
   School,
   WorkOutline,
 } from "@mui/icons-material";
-import { Users } from '../../dummyData'
+import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
+import { Link } from "@mui/material";
 
 function Sidebar() {
   return (
@@ -23,8 +24,13 @@ function Sidebar() {
             <span className="sidebarListItemText">Feed</span>
           </li>
           <li className="sidebarListItem">
-            <Chat className="sidebarIcon" />
-            <span className="sidebarListItemText">Chats</span>
+            <Link
+              to="/chat"
+              style={{ textDecoration: "none", cursor: "pointer" }}
+            >
+              <Chat className="sidebarIcon" />
+              <span className="sidebarListItemText">Chats</span>
+            </Link>
           </li>
           <li className="sidebarListItem">
             <PlayCircleFilledOutlined className="sidebarIcon" />
@@ -56,12 +62,11 @@ function Sidebar() {
           </li>
         </ul>
         <button className="sidebarButton">Show More</button>
-        <hr className="sidebarHr"/>
+        <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-         {Users.map((u)=>(
-<CloseFriend  key={u.id} user={u}/>
-         ))}
-          
+          {Users.map((u) => (
+            <CloseFriend key={u.id} user={u} />
+          ))}
         </ul>
       </div>
     </div>
