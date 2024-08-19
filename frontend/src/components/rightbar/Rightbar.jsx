@@ -17,9 +17,7 @@ function Rightbar({ user }) {
     currentUser.following.includes(user?.id)
   );
 
-  // useEffect(() => {
-  //   setFollowed(currentUser.following.includes(user?.id));
-  // }, [currentUser, user.id]);
+
 
   useEffect(() => {
     const getFriends = async () => {

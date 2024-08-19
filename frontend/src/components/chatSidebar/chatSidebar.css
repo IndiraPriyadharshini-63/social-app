@@ -1,0 +1,50 @@
+.chatSidebar {
+  flex: 3;
+  height: calc(100vh - 50px);
+  top: 50px;
+  overflow-y: scroll;
+  position: sticky;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(182, 153, 153);
+  border-radius: 2px;
+}
+
+.chatSidebarWrapper {
+  padding: 10px;
+}
+
+.chatSidebarList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chatSidebarListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.chatSidebarListItemImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chatSidebarListItemText {
+  margin-left: 10px;
+}
+
+.ChatSidebarHr {
+  margin-bottom: 10px;
+  opacity: 0.4;
+}

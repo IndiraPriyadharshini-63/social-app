@@ -24,13 +24,8 @@ function Sidebar() {
             <span className="sidebarListItemText">Feed</span>
           </li>
           <li className="sidebarListItem">
-            <Link
-              to="/chat"
-              style={{ textDecoration: "none", cursor: "pointer" }}
-            >
-              <Chat className="sidebarIcon" />
-              <span className="sidebarListItemText">Chats</span>
-            </Link>
+            <Chat className="sidebarIcon" />
+            <span className="sidebarListItemText">Chats</span>
           </li>
           <li className="sidebarListItem">
             <PlayCircleFilledOutlined className="sidebarIcon" />

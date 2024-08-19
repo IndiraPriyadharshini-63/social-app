@@ -11,6 +11,7 @@ import Profile from "./pages/profile/Profile";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Chat from "./pages/chat/Chat";
+import Videos from "./pages/videos/Videos";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -27,7 +28,8 @@ function App() {
           element={user ? <Navigate replace to="/" /> : <Register />}
         />
         <Route path="/profile/:username" element={<Profile />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/chat" element={user ? <Chat /> : <Login />} />
+        <Route path="/videos" element={user ? <Videos /> : <Login />} />
       </Routes>
     </Router>
   );

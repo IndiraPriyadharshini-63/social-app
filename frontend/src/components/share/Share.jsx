@@ -5,6 +5,7 @@ import {
   Room,
   EmojiEmotions,
   Cancel,
+  Send,
 } from "@mui/icons-material";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useRef, useState } from "react";
@@ -97,7 +98,7 @@ function Share() {
           </div>
 
           <button className="shareButton" type="submit">
-            Share
+            <Send sx={{ fontSize: "18px" }} />
           </button>
         </form>
       </div>
