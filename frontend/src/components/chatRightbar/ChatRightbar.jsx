@@ -3,9 +3,6 @@ import { useRef, useState } from "react";
 import "./chatRightbar.css";
 import ChatContent from "../chatContent/ChatContent";
 function ChatRightbar() {
- 
-  
-
   return (
     <div className="chatRightbar">
       <div className="chatRightbarWrapper">
@@ -17,9 +14,9 @@ function ChatRightbar() {
           </div>
           <MoreVert />
         </div>
-        <ChatContent/>
+        <ChatContent />
         <div className="chatViewBottom">
-          <form className="chatViewInputContainer" >
+          <form className="chatViewInputContainer">
             <div className="emoji">
               <EmojiEmotions />
             </div>
@@ -27,7 +24,6 @@ function ChatRightbar() {
               type="text"
               placeholder="Type Something..."
               className="chatViewInput"
-              
             />
             <button className="chatViewShareBtn" type="submit">
               <Send />

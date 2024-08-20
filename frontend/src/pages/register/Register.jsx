@@ -20,11 +20,10 @@ function Register() {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
-        // confirmPassword:confirmPassword.current.value,
       };
       try {
         await axios.post("/auth/register", user);
-        navigate("/login")
+        navigate("/login");
       } catch (err) {
         console.log(err);
       }

@@ -1,10 +1,12 @@
-import "./post.css";
 import { MoreVert } from "@mui/icons-material";
 import axios from "axios";
-import { useState, useEffect, useContext } from "react";
-import { format } from "timeago.js";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { format } from "timeago.js";
 import { AuthContext } from "../../context/AuthContext";
+import "./post.css";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -31,7 +33,6 @@ function Post({ post }) {
     //   setLike(like + 1);
     // }
     try {
-      // console.log(currentUser._id)
       await axios.put("/posts/" + post._id + "/like", {
         userId: currentUser._id,
       });
@@ -62,7 +63,16 @@ function Post({ post }) {
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
-            <MoreVert />
+            
+            <Popup trigger={<MoreVert sx={{ cursor: "pointer" }} />} position="bottom right" >
+              <div style={{margin:"10px"}}>
+                <ul style={{listStyle:"none", padding:"10px"}}>
+                  <li style={{marginBottom:"5px"}}>Share</li>
+                  <hr style={{opacity:"0.6"}}/>
+                  <li style={{marginTop:"5px"}}>Message</li>
+                </ul>
+              </div>
+            </Popup>
           </div>
         </div>
         <div className="postCenter">

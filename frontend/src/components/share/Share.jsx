@@ -15,7 +15,9 @@ function Share() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user } = useContext(AuthContext);
   const desc = useRef();
+
   const [file, setFile] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +46,7 @@ function Share() {
       console.log(err);
     }
   };
+
   return (
     <div className="share">
       <div className="shareWrapper">
@@ -70,6 +73,7 @@ function Share() {
             <Cancel className="shareCancel" onClick={() => setFile(null)} />
           </div>
         )}
+
         <form className="shareBottom" onSubmit={handleSubmit}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
@@ -83,10 +87,11 @@ function Share() {
                 style={{ display: "none" }}
               />
             </label>
-            <div className="shareOption">
+            <label className="shareOption" >
               <Label htmlColor="blue" className="shareIcon" />
               <span className="shareOptionText">Tag</span>
-            </div>
+            </label>
+            
             <div className="shareOption">
               <Room htmlColor="green" className="shareIcon" />
               <span className="shareOptionText">Location</span>

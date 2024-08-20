@@ -6,9 +6,9 @@ import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
 function Feed({ username }) {
-  // console.log(username);
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
+
   useEffect(() => {
     const fetchPosts = async () => {
       // const userPosts = await axios.get("/posts/profile/" + username)
@@ -20,10 +20,10 @@ function Feed({ username }) {
           return new Date(p2.createdAt) - new Date(p1.createdAt);
         })
       );
-      // console.log(posts)
     };
     fetchPosts();
   }, [username, user._id]);
+
   return (
     <div className="feed">
       <div className="feedWrapper">

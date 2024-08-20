@@ -1,4 +1,3 @@
-import "./sidebar.css";
 import {
   Bookmark,
   Chat,
@@ -12,7 +11,8 @@ import {
 } from "@mui/icons-material";
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
-import { Link } from "@mui/material";
+import "./sidebar.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -23,14 +23,18 @@ function Sidebar() {
             <RssFeed className="sidebarIcon" />
             <span className="sidebarListItemText">Feed</span>
           </li>
+          <Link to="/chat"  style={{textDecoration:"none"}}>
           <li className="sidebarListItem">
             <Chat className="sidebarIcon" />
             <span className="sidebarListItemText">Chats</span>
           </li>
+          </Link>
+          <Link to="/videos">
           <li className="sidebarListItem">
             <PlayCircleFilledOutlined className="sidebarIcon" />
             <span className="sidebarListItemText">Videos</span>
           </li>
+          </Link>
           <li className="sidebarListItem">
             <Group className="sidebarIcon" />
             <span className="sidebarListItemText">Groups</span>

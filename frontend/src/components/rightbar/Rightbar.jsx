@@ -8,16 +8,13 @@ import { Add, Remove } from "@mui/icons-material";
 import { AuthContext } from "../../context/AuthContext";
 
 function Rightbar({ user }) {
-  // console.log(user);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
   const { user: currentUser, dispatch } = useContext(AuthContext);
-  // console.log(currentUser);
+
   const [followed, setFollowed] = useState(
     currentUser.following.includes(user?.id)
   );
-
-
 
   useEffect(() => {
     const getFriends = async () => {

@@ -24,6 +24,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  
 }
 
 .sidebarListItem{
@@ -32,6 +33,8 @@
   margin-bottom: 20px;
 
 }
+
+
 
 .sidebarIcon{
   margin-right: 15px;

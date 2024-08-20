@@ -14,10 +14,10 @@ function Videos() {
   const filteredVideos = videos.filter((video) =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
   return (
     <>
       <Topbar />
-
       <div
         style={{
           display: "flex",

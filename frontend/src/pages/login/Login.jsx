@@ -43,15 +43,15 @@ function Login() {
             />
             <button className="loginButton" type="submit" disabled={isFetching}>
               {isFetching ? (
-                <CircularProgress  sx={{color:"white"}} />
+                <CircularProgress sx={{ color: "white" }} />
               ) : (
                 "Log In"
               )}
             </button>
             <span className="loginForgot">Forgot Password</span>
             <button className="registerButton">
-            {isFetching ? (
-                <CircularProgress  sx={{color:"white"}} />
+              {isFetching ? (
+                <CircularProgress sx={{ color: "white" }} />
               ) : (
                 "Create New Account"
               )}
