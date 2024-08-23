@@ -1,17 +1,15 @@
-import Home from "./pages/home/Home";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import Profile from "./pages/profile/Profile";
 import { useContext } from "react";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
-import Chat from "./pages/chat/Chat";
-import Videos from "./pages/videos/Videos";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Profile from "./pages/profile/Profile";
+import Register from "./pages/register/Register";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -28,8 +26,6 @@ function App() {
           element={user ? <Navigate replace to="/" /> : <Register />}
         />
         <Route path="/profile/:username" element={<Profile />} />
-        <Route path="/chat" element={user ? <Chat /> : <Login />} />
-        <Route path="/videos" element={user ? <Videos /> : <Login />} />
       </Routes>
     </Router>
   );
