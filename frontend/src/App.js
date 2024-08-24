@@ -11,6 +11,7 @@ import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import Messenger from "./pages/messenger/Messenger";
+import EditProfile from "./pages/editProfile/EditProfile";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -29,6 +30,10 @@ function App() {
         <Route
           path="/messenger"
           element={!user ? <Navigate replace to="/" /> : <Messenger />}
+        />
+        <Route
+          path="/update/:id"
+          element={!user ? <Navigate replace to="/" /> : <EditProfile />}
         />
         <Route path="/profile/:username" element={<Profile />} />
       </Routes>

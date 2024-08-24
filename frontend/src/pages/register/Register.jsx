@@ -72,7 +72,12 @@ function Register() {
               Sign Up
             </button>
             <span className="loginForgot">Already have Account?</span>
-            <button className="registerButton">Log In</button>
+            <button
+              className="registerButton"
+              onClick={() => navigate("/login")}
+            >
+              Log In
+            </button>
           </form>
         </div>
       </div>

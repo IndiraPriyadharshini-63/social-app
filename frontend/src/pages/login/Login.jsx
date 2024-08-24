@@ -3,9 +3,11 @@ import "./login.css";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 function Login() {
   const email = useRef();
   const password = useRef();
+  const navigate = useNavigate();
 
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const handleSubmit = (e) => {
@@ -48,7 +50,10 @@ function Login() {
               )}
             </button>
             <span className="loginForgot">Forgot Password</span>
-            <button className="registerButton">
+            <button
+              className="registerButton"
+              onClick={() => navigate("/register")}
+            >
               {isFetching ? (
                 <CircularProgress sx={{ color: "white" }} />
               ) : (
