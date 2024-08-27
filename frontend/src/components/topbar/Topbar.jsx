@@ -23,6 +23,7 @@ import axios from "axios";
 
 function Topbar() {
   const { user } = useContext(AuthContext);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -35,8 +36,6 @@ function Topbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const handleEditProfile = async () => {};
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -79,19 +78,19 @@ function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        {/* <Link to={`/profile/${user.username}`}>
-          <img
-            src={
-              user.profilePicture
-                ? PF + user.profilePicture
-                : PF + "person/noAvatar.png"
-            }
-            alt=""
-            className="topbarImg"
-          />
-        </Link> */}
+        {/* <Link to={`/profile/${user.username}`}> */}
+        <img
+          src={
+            user.profilePicture
+              ? PF + user.profilePicture
+              : PF + "person/noAvatar.png"
+          }
+          alt=""
+          className="topbarImg"
+        />
+        {/* </Link> */}
 
-        <Box>
+        {/* <Box>
           <Tooltip title="Account Settings">
             <img
               src={
@@ -129,7 +128,7 @@ function Topbar() {
             <Logout fontSize="small" sx={{ marginRight: "10px" }} />
             Logout
           </MenuItem>
-        </Menu>
+        </Menu> */}
       </div>
     </div>
   );
