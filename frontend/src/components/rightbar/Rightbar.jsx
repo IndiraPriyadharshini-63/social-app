@@ -92,11 +92,11 @@ function Rightbar({ user }) {
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship:</span>
             <span className="rightbarInfoValue">
-              {user.relationship === 1
+              {user.relationship === "Single"
                 ? "Single"
-                : user.relationship === 2
+                : user.relationship === "Married"
                 ? "Married"
-                : "-"}
+                : "Prefer not to say"}
             </span>
           </div>
         </div>
@@ -107,7 +107,7 @@ function Rightbar({ user }) {
               to={"/profile/" + friend.username}
               style={{ textDecoration: "none" }}
             >
-              <div className="rightbarFollowing">
+              <div className="rightbarFollowing" key={friend._id}>
                 <img
                   src={
                     friend.profilePicture

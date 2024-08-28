@@ -1,39 +1,23 @@
-import {
-  Edit,
-  Image,
-  PermMedia,
-  PhotoCameraOutlined,
-} from "@mui/icons-material";
-import {
-  Avatar,
-  Button,
-  DialogTitle,
-  styled,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  IconButton,
-} from "@mui/material";
+import { PermMedia } from "@mui/icons-material";
+import { Dialog, DialogTitle, IconButton, styled } from "@mui/material";
 import "./personalInfo.css";
 
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import Avatar1 from "react-avatar-edit";
 
 import CloseIcon from "@mui/icons-material/Close";
-import { Users } from "../../dummyData";
-const rel = [
-  { id: 1, value: "Single" },
-  {
-    id: 2,
-    value: "Married",
-  },
-  {
-    id: 3,
-    value: "Prefer Not to Say",
-  },
-];
+// const rel = [
+//   { id: 1, value: "Single" },
+//   {
+//     id: 2,
+//     value: "Married",
+//   },
+//   {
+//     id: 3,
+//     value: "Prefer Not to Say",
+//   },
+// ];
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -46,9 +30,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 function PersonalInfo() {
   const { user } = useContext(AuthContext);
-  const [img, setImg] = useState("");
-  const [open, setOpen] = useState(false);
-  const [storeImg, setStoreImg] = useState([]);
+
   const [file, setFile] = useState(null);
   const username = useRef();
   const desc = useRef();
@@ -87,75 +69,6 @@ function PersonalInfo() {
     } catch (err) {
       console.log(err);
     }
-    // const user = {
-    //   username: username.current.value,
-    //   desc: desc.current.value,
-    //   city: city.current.value,
-    //   from: from.current.value,
-    //   relationship: relationship.current.value,
-    // };
-  };
-
-  const handelClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const onCrop = (view) => {
-    setImg(view);
-  };
-
-  const onClose = (view) => {
-    setImg(null);
-  };
-
-  const getWindowSize = () => {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  };
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  const saveImage = () => {
-    setStoreImg([{ img } ? img : " "]);
-    setOpen(false);
-  };
-
-  const BootstrapDialogTitle = (props) => {
-    const { children, onClose, ...other } = props;
-    return (
-      <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-        {children}
-        {onClose ? (
-          <IconButton
-            aria-label="close"
-            onClick={onClose}
-            sx={{
-              position: "absolute",
-              right: 8,
-              top: 8,
-              color: (theme) => theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        ) : null}
-      </DialogTitle>
-    );
   };
 
   return (
@@ -210,40 +123,41 @@ function PersonalInfo() {
             style={{ display: "none" }}
           />
         </label>
+
         <input
           placeholder="Username"
           type="text"
           className="personalInfoInput"
           ref={username}
-          value={user.username}
+          defaultValue={user.username}
         />
         <input
           placeholder="Description"
           type="text"
           className="personalInfoInput"
           ref={desc}
-          value={user.desc}
+          defaultValue={user.desc}
         />
         <input
           placeholder="From"
           type="text"
           className="personalInfoInput"
           ref={from}
-          value={user.from}
+          defaultValue={user.from}
         />
         <input
           placeholder="City"
           type="text"
           className="personalInfoInput"
           ref={city}
-          value={user.city}
+          defaultValue={user.city}
         />
         <input
           placeholder="Relationship"
           type="text"
           className="personalInfoInput"
           ref={relationship}
-          value={user.relationship}
+          defaultValue={user.relationship}
         />
         <div className="Submit">
           <button type="submit" className="submitBtn">

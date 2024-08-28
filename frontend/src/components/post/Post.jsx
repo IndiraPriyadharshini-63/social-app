@@ -63,13 +63,15 @@ function Post({ post }) {
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
-            
-            <Popup trigger={<MoreVert sx={{ cursor: "pointer" }} />} position="bottom right" >
-              <div style={{margin:"10px"}}>
-                <ul style={{listStyle:"none", padding:"10px"}}>
-                  <li style={{marginBottom:"5px"}}>Share</li>
-                  <hr style={{opacity:"0.6"}}/>
-                  <li style={{marginTop:"5px"}}>Message</li>
+            <Popup
+              trigger={<MoreVert sx={{ cursor: "pointer" }} />}
+              position="bottom right"
+            >
+              <div style={{ margin: "10px" }}>
+                <ul style={{ listStyle: "none", padding: "10px" }}>
+                  <li style={{ marginBottom: "5px" }}>Share</li>
+                  <hr style={{ opacity: "0.6" }} />
+                  <li style={{ marginTop: "5px" }}>Message</li>
                 </ul>
               </div>
             </Popup>

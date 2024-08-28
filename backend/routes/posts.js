@@ -90,6 +90,11 @@ router.get("/profile/:username", async (req, res) => {
   try {
     const user = await User.find({ username: req.params.username });
     const posts = await Post.find({ userId: user._id });
+    // const userPosts = await Promise.all(
+    //   user.map((u) => {
+    //     return Post.find({ userId: u._id });
+    //   })
+    // );
 
     res.status(200).json(posts);
   } catch (err) {

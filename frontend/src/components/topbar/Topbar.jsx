@@ -78,7 +78,7 @@ function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        {/* <Link to={`/profile/${user.username}`}> */}
+        {/* <Link to={`/profile/${user.username}`}>
         <img
           src={
             user.profilePicture
@@ -88,9 +88,9 @@ function Topbar() {
           alt=""
           className="topbarImg"
         />
-        {/* </Link> */}
+        </Link> */}
 
-        {/* <Box>
+        <Box>
           <Tooltip title="Account Settings">
             <img
               src={
@@ -128,7 +128,7 @@ function Topbar() {
             <Logout fontSize="small" sx={{ marginRight: "10px" }} />
             Logout
           </MenuItem>
-        </Menu> */}
+        </Menu>
       </div>
     </div>
   );

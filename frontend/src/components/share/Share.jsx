@@ -18,7 +18,6 @@ function Share() {
 
   const [file, setFile] = useState(null);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {
@@ -87,11 +86,11 @@ function Share() {
                 style={{ display: "none" }}
               />
             </label>
-            <label className="shareOption" >
+            <label className="shareOption">
               <Label htmlColor="blue" className="shareIcon" />
               <span className="shareOptionText">Tag</span>
             </label>
-            
+
             <div className="shareOption">
               <Room htmlColor="green" className="shareIcon" />
               <span className="shareOptionText">Location</span>
